@@ -22,7 +22,7 @@ create_new_session()
   tmux new-window -n "RPF"
   tmux split-window -v -p 70 -t $APP:2   # vertical split   - RPF on top, shell on bottom
   
-  tmux send-keys -t $APP:2.1 'cls ; cd /home/aleak/lr/ListCall ; rpf Licahost:3000 3000' C-m                   # for inbound email testing
+  tmux send-keys -t $APP:2.1 'cls ; cd /home/aleak/lr/ListCall ; rpf Mozdmhost:3000 3000' C-m                   # for inbound email testing
 
   tmux select-window -t $APP:1
 
