@@ -29,7 +29,7 @@ orientation: vertical
 polymorphism: true
 sort: true
 warn: false
-title: ListCall Paging
+title: MozDM Paging
 exclude: null
 only: #{klasnames}
 "

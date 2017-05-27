@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'colored'
 
 gem 'slim-rails'                 # slim templates
 
@@ -29,12 +30,27 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+# ----- pry production support  -----
+gem 'pry-rails'     # upgraded repl
+gem 'hirb'
+
 group :development do
+
+  # ----- pry / development support -----
+  gem 'pry-doc'                        # doc functions
+  gem 'pry-docmore'                    # more doc functions
+  gem 'pry-byebug'                     # debugger
+  gem 'pry-rescue'                     # opens pry on failing test
+  gem 'pry-stack_explorer'             # stack display and navigation
+
+  gem 'guard'                       # auto test-runner
+  gem 'guard-rspec_min' , github: 'andyl/guard-rspec_min'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'       # 'spring rspec' command
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

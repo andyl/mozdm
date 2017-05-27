@@ -6,11 +6,11 @@ export APP="xmguard"
 create_new_session()
 {
 
-  cd /home/aleak/lr/ListCall
+  cd /home/aleak/lr/MozDM
 
   tmux new-session -s $APP -n GUARD -d
 
-  tmux send-keys -t $APP:1 'cls ; cd /home/aleak/lr/ListCall ; RUBYOPT=W0 bundle exec guard -c'  C-m
+  tmux send-keys -t $APP:1 'cls ; cd /home/aleak/lr/MozDM ; RUBYOPT=W0 bundle exec guard -c'  C-m
 
 }
 

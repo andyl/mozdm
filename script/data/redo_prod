@@ -2,13 +2,13 @@
 
 cap production app:disable
 
-ssh deploy@Mozdm 'sudo stop ListCall'
+ssh deploy@Mozdm 'sudo stop MozDM'
 
 ssh deploy@Mozdm 'killall -9 ruby'
 
 ssh deploy@Mozdm 'cd a/Mozdm/current ; script/recsv build'
 
-ssh deploy@Mozdm 'sudo start ListCall'
+ssh deploy@Mozdm 'sudo start MozDM'
 
 sleep 2
 

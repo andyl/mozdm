@@ -27,6 +27,6 @@ devcon_run()
   eval "$cmd"
 }
 
-devcon_msg "runs the ListCall development environment" $@
+devcon_msg "runs the MozDM development environment" $@
 
 devcon_run $@
