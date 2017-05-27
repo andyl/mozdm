@@ -29,18 +29,18 @@ class CreateTables < ActiveRecord::Migration[5.1]
 
     create_table :users do |t|
       t.boolean  :admin
-      t.string   :name
-      t.string   :email
-      t.string   :password
       t.timestamps
     end
 
-    def change
-      create_table :wallets do |t|
-        t.string   :user_id
-        t.string   :pub_key
-        t.timestamps
-      end
+    create_table :wallets do |t|
+      t.string   :user_id
+      t.string   :pub_key
+      t.timestamps
+    end
+
+    create_table :events do |t|
+      t.string :name
+      t.timestamps
     end
 
   end

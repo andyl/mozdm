@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'static/home'
 
   get 'static/help'
@@ -8,4 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :issues
   resources :repos
+
+  root "static#home"
+
 end
