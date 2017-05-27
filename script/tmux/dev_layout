@@ -35,21 +35,22 @@ create_new_session()
 
   tmux new-window -n "WEBPACK"
 
-  sendkeys 4.1 'clear ; webpack-dev-server --host 0.0.0.0 --public soak:8080'
+  # sendkeys 4.1 'clear ; webpack-dev-server --host 0.0.0.0 --public soak:8080'
+  sendkeys 4.1 'clear ; webpack-dev-server --public'
 
   # ----- -----
 
-  tmux new-window -n "SIDEKIQ"
-
-  sendkeys 5.1 'script/run/sidekiq'
+  # tmux new-window -n "SIDEKIQ"
+  #
+  # sendkeys 5.1 'script/run/sidekiq'
 
   # ----- -----
 
-  tmux new-window -n "TUNNEL"
-
-  splitwin 70 4
-
-  sendkeys 6.1 'clear ; rpf deploy@x440h64:3000 3000'
+  # tmux new-window -n "TUNNEL"
+  #
+  # splitwin 70 4
+  #
+  # sendkeys 6.1 'clear ; rpf deploy@x440h64:3000 3000'
 
   # ----- -----
 
