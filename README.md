@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## HOW TO BOOTSTRAP
 
-Things you may want to cover:
+### Staging using a Vagrant VM
 
-* Ruby version
+- install vagrant
+- bring up the machine (`vagrant up`)
+- login to the machine (`vagrant ssh`)
 
-* System dependencies
+### On Staging or Production
 
-* Configuration
+- create a deploy user (`sudo adduser --group admin deploy`)
+- setup DNS (using `/etc/hosts` or your dns registrar)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
