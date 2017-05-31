@@ -65,7 +65,6 @@ namespace :systemd do
   task :restart do
     on roles(:all) do
       execute "sudo systemctl restart mozdm"
-      # execute "sudo systemctl restart sidekiq"
     end
   end
 end
