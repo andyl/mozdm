@@ -17,6 +17,7 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'colored'
+gem 'whenever'
 
 gem 'slim-rails'                 # slim templates
 
