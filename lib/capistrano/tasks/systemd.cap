@@ -64,6 +64,7 @@ namespace :systemd do
   desc "Restart the application services"
   task :restart do
     on roles(:all) do
+      puts "RESTARTING"
       execute "sudo systemctl restart mozdm"
     end
   end
