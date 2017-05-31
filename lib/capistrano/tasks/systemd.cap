@@ -28,12 +28,12 @@ namespace :systemd do
   task :export do
     invoke("systemd:env_chruby")
     on roles(:all) do
-      template "systemd_lica_service.erb"   , "/tmp/lica.service"
+      template "systemd_mozdm.erb"          , "/tmp/mozdm.service"
       template "systemd_sidekiq_service.erb", "/tmp/sidekiq.service"
-      execute "sudo mv /tmp/lica.service    /etc/systemd/system"
+      execute "sudo mv /tmp/mozdm.service   /etc/systemd/system"
       execute "sudo mv /tmp/sidekiq.service /etc/systemd/system"
       execute "sudo systemctl daemon-reload"
-      execute "sudo systemctl enable lica"
+      execute "sudo systemctl enable mozdm"
       execute "sudo systemctl enable sidekiq"
     end
   end
@@ -48,7 +48,7 @@ namespace :systemd do
   desc "Start the application services"
   task :start do
     on roles(:all) do
-      execute "sudo systemctl start lica"
+      execute "sudo systemctl start mozdm"
       execute "sudo systemctl start sidekiq"
     end
   end
@@ -57,14 +57,14 @@ namespace :systemd do
   task :stop do
     on roles(:all) do
       execute "sudo systemctl stop sidekiq"
-      execute "sudo systemctl stop lica"
+      execute "sudo systemctl stop mozdm"
     end
   end
 
   desc "Restart the application services"
   task :restart do
     on roles(:all) do
-      execute "sudo systemctl restart lica"
+      execute "sudo systemctl restart mozdm"
       execute "sudo systemctl restart sidekiq"
     end
   end
