@@ -12,3 +12,12 @@ namespace :assets do
   end
 end
 
+Rake::Task["deploy:assets:precompile"].clear_actions
+Rake::Task["deploy:assets:precompile"].clear_comments
+namespace :deploy do
+  namespace :assets do
+    task :precompile do
+      # puts "PRECOMPILE PLACEHOLDER"
+    end
+  end
+end
