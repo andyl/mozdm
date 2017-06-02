@@ -3,6 +3,9 @@
 /.env-chruby
 /.bundle
 /.idea/
+.certs
+.certs/
+.certs/*
 /.certs/
 /.vagrant/
 /.erdconfig
