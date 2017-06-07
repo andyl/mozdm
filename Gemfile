@@ -19,6 +19,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'colored'
 gem 'whenever'
+gem 'github_api'
 
 gem 'slim-rails'                 # slim templates
 
@@ -28,7 +29,8 @@ gem 'capistrano-rails', group: :development
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'capybara', '~> 2.13'
+  # gem 'capybara', '~> 2.13'
+  gem 'capybara'
   gem 'selenium-webdriver'
 end
 
