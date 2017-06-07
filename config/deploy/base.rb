@@ -2,7 +2,7 @@ puts ' CAP CONFIG BASE '.center(70,'-')
 
 # ===== App Config =====
 
-set :application,    'mozdm'
+set :application,    'mvscdm'
 
 set :log_level,      :error                 # use :error, :warn, :info, or :debug
 set :format_options, command_output: false  # :stdout, :stderr, true, false
@@ -11,7 +11,7 @@ set :deploy_to,   -> { "/home/#{fetch(:user)}/a/#{fetch(:application).downcase}"
 
 # ===== Nginx Config =====
 
-set :vhost_names, %w(mozdm.net *.mozdm.net *.mozdm.com *.smso.vbox)
+set :vhost_names, %w(mvscdm.net *.mvscdm.net mozdm.net *.mozdm.net *.mozdm.com *.smso.vbox)
 set :web_port,    8500
 
 # ===== Source Access =====
