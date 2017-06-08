@@ -1,5 +1,5 @@
 {
-  "name": "mozdm",
+  "name": "mvscim",
   "private": true,
   "dependencies": {
     "autoprefixer": "^7.1.1",

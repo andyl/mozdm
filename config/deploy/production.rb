@@ -12,6 +12,6 @@ set :branch,    'master'
 
 set :rails_env, 'production'
 
-role :app, ['deploy@mvscdm.net']
-role :db,  ['deploy@mvscdm.net']
-role :web, ['deploy@mvscdm.net']
+role :app, ['deploy@mvscim.net']
+role :db,  ['deploy@mvscim.net']
+role :web, ['deploy@mvscim.net']
