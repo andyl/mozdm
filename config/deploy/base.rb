@@ -11,7 +11,7 @@ set :deploy_to,   -> { "/home/#{fetch(:user)}/a/#{fetch(:application).downcase}"
 
 # ===== Nginx Config =====
 
-set :vhost_names, %w(mvscim.net *.mvscim.net *.mvscim.com *.smso.vbox)
+set :vhost_names, %w(mvscim.net *.mvscim.net *.mozdm.net mozdm.net)
 set :web_port,    8500
 
 # ===== Source Access =====
