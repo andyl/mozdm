@@ -2,7 +2,7 @@ puts ' CAP CONFIG BASE '.center(70,'-')
 
 # ===== App Config =====
 
-set :application,    'mozdm'
+set :application,    'mvscim'
 
 set :log_level,      :error                 # use :error, :warn, :info, or :debug
 set :format_options, command_output: false  # :stdout, :stderr, true, false
@@ -11,12 +11,12 @@ set :deploy_to,   -> { "/home/#{fetch(:user)}/a/#{fetch(:application).downcase}"
 
 # ===== Nginx Config =====
 
-set :vhost_names, %w(mozdm.net *.mozdm.net *.mozdm.com *.smso.vbox)
+set :vhost_names, %w(mvscim.net *.mvscim.net *.mvscim.com *.smso.vbox)
 set :web_port,    8500
 
 # ===== Source Access =====
 
-set :repo_url,         'ssh://git@github.com/andyl/mozdm.git'
+set :repo_url,         'ssh://git@github.com/andyl/mvscim.git'
 
 # ===== Tasks =====
 
@@ -57,7 +57,7 @@ namespace :deploy do
       # restart SIDEKIQ
       # execute "(kill -s TERM $(ps -C ruby -F | grep 'sidekiq' | awk {'print $2'})) || sudo restart #{fetch(:application)} || sudo start #{fetch(:application)}"
       # execute "sudo restart #{fetch(:application)} || sudo start #{fetch(:application)}"
-      execute "sudo systemctl restart mozdm"
+      execute "sudo systemctl restart mvscim"
       # execute "sudo systemctl restart sidekiq"
     end
   end

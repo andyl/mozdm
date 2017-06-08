@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: mozdm_development
+  database: mvscim_development
 
 test:
   <<: *default
-  database: mozdm_test
+  database: mvscim_test
 
 production:
   <<: *default
-  database: mozdm_production
+  database: mvscim_production

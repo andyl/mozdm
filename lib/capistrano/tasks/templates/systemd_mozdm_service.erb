@@ -1,10 +1,10 @@
 # Systemd unit file for MOZDM on Ubuntu
 # This file created by Capistrano <%= Time.now.strftime("%Y-%m-%d %H:%M") %>
 # This file installed in /lib/systemd/system. Run:
-#   - systemctl enable mozdm
-#   - systemctl {status,start,stop,restart} mozdm
-#   - journalctl -u mozdm
-#   - journalctl -u mozdm -f
+#   - systemctl enable mvscim
+#   - systemctl {status,start,stop,restart} mvscim
+#   - journalctl -u mvscim
+#   - journalctl -u mvscim -f
 #
 # See Inspeqtor's Systemd wiki page for more detail about Systemd:
 # https://github.com/mperham/inspeqtor/wiki/Systemd
@@ -14,7 +14,7 @@
 # http://0pointer.de/public/systemd-man/systemd.exec.html
 
 [Unit]
-Description=mozdm: a Rails web application
+Description=mvscim: a Rails web application
 After=syslog.target network.target
 
 [Service]
@@ -22,9 +22,9 @@ User=deploy
 Group=deploy
 Type=simple
 
-WorkingDirectory=/home/deploy/a/mozdm/current
-EnvironmentFile=/home/deploy/a/mozdm/current/.env
-ExecStart=/bin/bash -lc 'bin/puma -p <%= fetch(:web_port) %> -C config/puma.rb -e production -S $USR_HOME/.mozdm_Puma_State'
+WorkingDirectory=/home/deploy/a/mvscim/current
+EnvironmentFile=/home/deploy/a/mvscim/current/.env
+ExecStart=/bin/bash -lc 'bin/puma -p <%= fetch(:web_port) %> -C config/puma.rb -e production -S $USR_HOME/.mvscim_Puma_State'
 
 Restart=always
 KillMode=mixed
@@ -33,7 +33,7 @@ TimeoutStopSec=5
 StandardInput=null
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=mozdm
+SyslogIdentifier=mvscim
 
 [Install]
 WantedBy=multi-user.target
