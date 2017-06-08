@@ -11,7 +11,7 @@ set :deploy_to,   -> { "/home/#{fetch(:user)}/a/#{fetch(:application).downcase}"
 
 # ===== Nginx Config =====
 
-set :vhost_names, %w(mvscim.net *.mvscim.net mvscim.net *.mvscim.net *.mvscim.com *.smso.vbox)
+set :vhost_names, %w(mvscim.net *.mvscim.net *.mvscim.com *.smso.vbox)
 set :web_port,    8500
 
 # ===== Source Access =====
@@ -53,10 +53,6 @@ namespace :deploy do
       debug ' RESTART '.center(80,'-')
       debug ' TODO: FIX THE BROKEN KILL SIGNALS '.center(80,'-')
       # restart PUMA
-      # execute "(kill -s SIGUSR1 $(ps -C ruby -F | grep '/puma' | awk {'print $2'})) || sudo restart #{fetch(:application)} || sudo start #{fetch(:application)}"
-      # restart SIDEKIQ
-      # execute "(kill -s TERM $(ps -C ruby -F | grep 'sidekiq' | awk {'print $2'})) || sudo restart #{fetch(:application)} || sudo start #{fetch(:application)}"
-      # execute "sudo restart #{fetch(:application)} || sudo start #{fetch(:application)}"
       execute "sudo systemctl restart mvscim"
       # execute "sudo systemctl restart sidekiq"
     end

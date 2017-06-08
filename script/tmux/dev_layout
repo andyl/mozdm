@@ -2,7 +2,7 @@
 
 # call from tmux_console
 
-export APP="MOZDM-DEV"
+export APP="MVSCIM-DEV"
 
 sendkeys() {
   tmux send-keys -t $APP:$1 "$2" C-m
